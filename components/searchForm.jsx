@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { FaSearch } from "react-icons/fa";
 
 const SearchForm = () => {
   const [location, setLocation] = useState("");
@@ -22,9 +23,9 @@ const SearchForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-3 mx-auto max-w-2xl w-full flex flex-col md:flex-row items-center"
+      className="mt-3 mx-auto max-w-2xl w-full flex flex-row items-center flex-wrap md:flex-nowrap"
     >
-      <div className="w-full md:w-3/5 md:pr-2 mb-4 md:mb-0">
+      <div className="w-full md:w-5/10 md:pr-2 mb-4 md:mb-0">
         <label htmlFor="location" className="sr-only">
           Location
         </label>
@@ -39,7 +40,7 @@ const SearchForm = () => {
           }}
         />
       </div>
-      <div className="w-full md:w-2/5 md:pl-2">
+      <div className=" flex-1 md:w-3/10 md:pl-2">
         <label htmlFor="property-type" className="sr-only">
           Property Type
         </label>
@@ -64,8 +65,9 @@ const SearchForm = () => {
       </div>
       <button
         type="submit"
-        className="md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
+        className="ml-4 md:ml-4 md:w-2/10 px-6 py-3 rounded-lg bg-black text-white hover:bg-gray-700 focus:outline-none focus:ring focus:ring-white"
       >
+        <FaSearch className="inline-block text-white mr-2" />
         Search
       </button>
     </form>
